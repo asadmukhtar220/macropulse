@@ -1,0 +1,11 @@
+[
+  {
+    "scraper": "cheerio",
+    "target": "https://books.toscrape.com",
+    "pages_scraped": 5,
+    "total_records": 100,
+    "duration_ms": 6691,
+    "avg_ms_per_page": 1338,
+    "completed_at": "2026-05-24T08:37:05.879Z"
+  }
+]
