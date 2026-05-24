@@ -1,7 +1,7 @@
 # MacroPulse Daily Digest
-_Generated: 2026-05-24T09:42:21.640Z_
+_Generated: 2026-05-24T10:31:58.120Z_
 
-**Total classified signals**: 23
+**Total classified signals**: 22
 
 ## Armed Conflict / War (8)
 
@@ -182,16 +182,6 @@ _Generated: 2026-05-24T09:42:21.640Z_
 - **Published**: 2026-05-22T18:23:49.000Z
 - **Severity score**: 0.58
 - **Link**: https://www.cnbc.com/2026/05/22/kevin-warshs-real-fed-regime-change-may-happen-deep-inside-wall-streets-plumbing.html
-
-## Oil / Energy Supply Disruption (1)
-
-### [MEDIUM] ‘Buffett Indicator’ warns of a market top — 8 crucial signs that stocks are running on fumes
-- **Source**: MarketWatch - Top Stories
-- **Published**: 2026-05-23T15:33:00.000Z
-- **Severity score**: 0.6
-- **Tailwind candidates**: XLE, XOM, CVX, OXY, ICLN
-- **Headwind candidates**: DAL, UAL, FDX
-- **Link**: https://www.marketwatch.com/story/buffett-indicator-warns-of-a-market-top-8-crucial-signs-that-stocks-are-running-on-fumes-12e4b4d8?mod=mw_rss_topstories
 
 ## Material Corporate Filing (8-K) (1)
 

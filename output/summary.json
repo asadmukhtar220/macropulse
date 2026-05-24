@@ -1,11 +1,11 @@
 {
-  "completed_at": "2026-05-24T09:42:21.662Z",
-  "duration_ms": 3929,
+  "completed_at": "2026-05-24T10:31:58.125Z",
+  "duration_ms": 2943,
   "feeds_total": 10,
   "feeds_ok": 10,
   "feeds_failed": 0,
   "items_total": 268,
-  "signals_matched": 23,
+  "signals_matched": 22,
   "signals_critical_or_high": 3,
   "by_event": {
     "Armed Conflict / War": 8,
@@ -13,7 +13,6 @@
     "Disease Outbreak / Pandemic": 3,
     "Natural Disaster": 2,
     "Election / Political Transition": 1,
-    "Oil / Energy Supply Disruption": 1,
     "Interest Rate Cut": 2,
     "Economic Sanctions": 2,
     "Material Corporate Filing (8-K)": 1

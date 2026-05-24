@@ -1,3 +1,4 @@
+import fs from 'fs/promises';
 import path from 'path';
 import { log, readJson, sleep } from './utils.js';
 import { fetchAll } from './fetcher.js';
@@ -6,7 +7,18 @@ import { writeFeed, writeAlerts, writeDigest, appendLiveLog } from './output.js'
 import { loadSeen, saveSeen, itemKey } from './dedupe.js';
 
 const CONFIG_DIR = path.resolve('config');
+const FEED_FILE = path.resolve('output/feed.json');
 let stopping = false;
+
+async function loadExistingFeed() {
+  try {
+    const data = await fs.readFile(FEED_FILE, 'utf8');
+    const arr = JSON.parse(data);
+    return Array.isArray(arr) ? arr : [];
+  } catch {
+    return [];
+  }
+}
 
 async function poll(feedsCfg, impactMap, seen, allSignals) {
   const pollStart = Date.now();
@@ -25,13 +37,13 @@ async function poll(feedsCfg, impactMap, seen, allSignals) {
 
   log('INFO', `Poll cycle: ${items.length} items total, ${fresh.length} new (${stats.failed} feed failures)`);
 
-  const newSignals = [];
+  let newMatchedCount = 0;
   for (const item of fresh) {
     const signal = buildSignal(item, impactMap);
-    newSignals.push(signal);
     allSignals.push(signal);
 
     if (signal.matched) {
+      newMatchedCount++;
       const tag = `[${signal.severity.toUpperCase()}] [${signal.primary_event_label}]`;
       log('ALERT', `${tag} ${signal.title}`);
       if (signal.example_tickers_bullish.length > 0) {
@@ -45,12 +57,15 @@ async function poll(feedsCfg, impactMap, seen, allSignals) {
     await appendLiveLog(signal);
   }
 
-  if (newSignals.length > 0) {
+  if (fresh.length > 0) {
     await writeFeed(allSignals);
     const critical = allSignals.filter(s => s.severity === 'critical' || s.severity === 'high');
     await writeAlerts(critical);
     await writeDigest(allSignals);
     await saveSeen(seen);
+    log('INFO', `Persisted: total signals=${allSignals.length}, new matched=${newMatchedCount}, alerts total=${critical.length}`);
+  } else {
+    log('INFO', 'No new items — outputs unchanged');
   }
 
   return Date.now() - pollStart;
@@ -66,9 +81,11 @@ async function main() {
   const seen = await loadSeen();
   log('INFO', `Loaded ${seen.size} previously-seen items for dedup`);
 
-  const allSignals = [];
-  let cycle = 0;
+  const allSignals = await loadExistingFeed();
+  const existingMatched = allSignals.filter(s => s.matched).length;
+  log('INFO', `Loaded ${allSignals.length} existing signals from prior runs (${existingMatched} classified)`);
 
+  let cycle = 0;
   while (!stopping) {
     cycle++;
     log('INFO', `=== Poll cycle #${cycle} ===`);
