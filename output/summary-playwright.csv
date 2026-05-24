@@ -1,2 +1,0 @@
-scraper,target,pages_scraped,total_records,duration_ms,avg_ms_per_page,completed_at
-playwright,https://books.toscrape.com,3,60,9646,3215,2026-05-24T08:37:36.393Z

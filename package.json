@@ -1,27 +1,29 @@
 {
-  "name": "web-scraper-demo",
+  "name": "macropulse",
   "version": "1.0.0",
-  "description": "Production-ready web scraper demo using Playwright and Cheerio. Extracts book catalog data from books.toscrape.com with pagination, error handling, retries, and dual CSV/JSON output.",
-  "main": "src/scrape.js",
+  "description": "Real-time macro event aggregator for financial markets. Watches official RSS feeds (Fed, Treasury, SEC, WHO, BBC, CNBC, MarketWatch) and emits classified signals mapped to affected sectors and tickers within seconds of publication.",
   "type": "module",
+  "main": "src/watch.js",
   "scripts": {
-    "scrape": "node src/scrape.js",
-    "scrape:fast": "node src/scrape-cheerio.js",
-    "scrape:playwright": "node src/scrape-playwright.js"
+    "start": "node src/watch.js",
+    "watch": "node src/watch.js",
+    "scan": "node src/scan.js",
+    "scan:once": "node src/scan.js"
   },
   "keywords": [
-    "web-scraping",
-    "data-extraction",
-    "playwright",
-    "cheerio",
-    "automation",
-    "qa-engineer"
+    "fintech",
+    "macro-events",
+    "real-time",
+    "rss-aggregator",
+    "trading-signals",
+    "geopolitical",
+    "event-classification",
+    "sector-impact"
   ],
   "author": "Asad Mukhtar",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.7.0",
-    "cheerio": "^1.0.0",
-    "playwright": "^1.48.0"
+    "rss-parser": "^3.13.0"
   }
 }

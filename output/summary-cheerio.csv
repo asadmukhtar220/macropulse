@@ -1,2 +1,0 @@
-scraper,target,pages_scraped,total_records,duration_ms,avg_ms_per_page,completed_at
-cheerio,https://books.toscrape.com,5,100,6691,1338,2026-05-24T08:37:05.879Z

@@ -1,0 +1,173 @@
+{
+  "events": {
+    "war_outbreak": {
+      "label": "Armed Conflict / War",
+      "keywords": ["invasion", "invades", "war", "wartime", "missile strike", "airstrike", "military operation", "casualties", "ground offensive", "ceasefire collapse", "troops deployed", "drone strike"],
+      "weight": 1.0,
+      "impact": {
+        "bullish_sectors": ["defense", "energy_oil", "precious_metals", "cybersecurity"],
+        "bearish_sectors": ["airlines", "leisure_travel", "consumer_discretionary"],
+        "example_tickers": {
+          "bullish": ["LMT", "RTX", "NOC", "XOM", "CVX", "GLD", "PANW"],
+          "bearish": ["DAL", "UAL", "BKNG", "CCL"]
+        }
+      }
+    },
+    "sanctions_imposed": {
+      "label": "Economic Sanctions",
+      "keywords": ["sanctions", "sanctioned", "trade ban", "embargo", "export controls", "frozen assets", "secondary sanctions", "OFAC", "blacklist"],
+      "weight": 0.85,
+      "impact": {
+        "bullish_sectors": ["domestic_producers", "precious_metals", "alternative_payments"],
+        "bearish_sectors": ["multinational_consumer", "industrials_exposed"],
+        "example_tickers": {
+          "bullish": ["GLD", "SLV", "BTC-USD"],
+          "bearish": ["KO", "MCD", "BA"]
+        }
+      }
+    },
+    "rate_cut": {
+      "label": "Interest Rate Cut",
+      "keywords": ["rate cut", "lowered rates", "cuts interest", "reduces target rate", "dovish pivot", "basis points cut", "lower rates"],
+      "weight": 0.9,
+      "impact": {
+        "bullish_sectors": ["real_estate", "growth_tech", "small_caps", "long_duration_bonds"],
+        "bearish_sectors": ["banks_nim_sensitive", "us_dollar"],
+        "example_tickers": {
+          "bullish": ["QQQ", "VNQ", "IWM", "TLT"],
+          "bearish": ["KRE", "UUP"]
+        }
+      }
+    },
+    "rate_hike": {
+      "label": "Interest Rate Hike",
+      "keywords": ["rate hike", "raises rates", "tightening", "hawkish", "basis points hike", "raised interest", "lifted rates"],
+      "weight": 0.9,
+      "impact": {
+        "bullish_sectors": ["banks_nim_sensitive", "us_dollar", "short_duration_bonds"],
+        "bearish_sectors": ["real_estate", "growth_tech", "long_duration_bonds"],
+        "example_tickers": {
+          "bullish": ["KRE", "UUP", "SHY"],
+          "bearish": ["VNQ", "QQQ", "TLT"]
+        }
+      }
+    },
+    "qe_qt": {
+      "label": "Quantitative Easing / Tightening",
+      "keywords": ["balance sheet", "quantitative easing", "quantitative tightening", "asset purchases", "bond buying program", "QE", "QT"],
+      "weight": 0.85,
+      "impact": {
+        "bullish_sectors": ["risk_assets_broad", "growth_tech"],
+        "bearish_sectors": ["us_dollar"],
+        "example_tickers": {
+          "bullish": ["SPY", "QQQ"],
+          "bearish": ["UUP"]
+        }
+      }
+    },
+    "pandemic_outbreak": {
+      "label": "Disease Outbreak / Pandemic",
+      "keywords": ["outbreak", "pandemic", "epidemic", "novel virus", "novel pathogen", "spreading rapidly", "WHO declares", "public health emergency", "PHEIC"],
+      "weight": 1.0,
+      "impact": {
+        "bullish_sectors": ["pharma_vaccines", "remote_work_tech", "delivery", "diagnostics"],
+        "bearish_sectors": ["airlines", "leisure_travel", "live_events", "in_person_retail"],
+        "example_tickers": {
+          "bullish": ["PFE", "MRNA", "ZM", "DOCU", "AMZN"],
+          "bearish": ["DAL", "BKNG", "MAR", "CCL", "AMC"]
+        }
+      }
+    },
+    "oil_supply_shock": {
+      "label": "Oil / Energy Supply Disruption",
+      "keywords": ["oil supply", "production cut", "OPEC", "pipeline attack", "refinery fire", "barrels per day", "crude oil", "energy crisis", "gas shortage"],
+      "weight": 0.85,
+      "impact": {
+        "bullish_sectors": ["energy_oil", "energy_services", "renewables_long_term"],
+        "bearish_sectors": ["airlines", "trucking", "chemicals"],
+        "example_tickers": {
+          "bullish": ["XLE", "XOM", "CVX", "OXY", "ICLN"],
+          "bearish": ["DAL", "UAL", "FDX"]
+        }
+      }
+    },
+    "trade_tariffs": {
+      "label": "Tariffs / Trade Policy",
+      "keywords": ["tariffs", "trade war", "import duties", "trade deal", "WTO", "trade restrictions", "customs duties", "retaliatory tariffs"],
+      "weight": 0.8,
+      "impact": {
+        "bullish_sectors": ["domestic_manufacturing", "agriculture"],
+        "bearish_sectors": ["multinational_tech", "retail_imports", "semiconductors"],
+        "example_tickers": {
+          "bullish": ["CAT", "DE", "X"],
+          "bearish": ["AAPL", "WMT", "SOXX"]
+        }
+      }
+    },
+    "natural_disaster": {
+      "label": "Natural Disaster",
+      "keywords": ["hurricane", "earthquake", "tsunami", "wildfire", "flooding", "typhoon", "magnitude", "evacuation order", "disaster zone"],
+      "weight": 0.7,
+      "impact": {
+        "bullish_sectors": ["reinsurance", "building_materials", "utilities_repair"],
+        "bearish_sectors": ["insurance_property", "hospitality_regional"],
+        "example_tickers": {
+          "bullish": ["RNR", "RGA", "HD", "LOW"],
+          "bearish": ["TRV", "ALL"]
+        }
+      }
+    },
+    "cyber_attack": {
+      "label": "Major Cyber Attack",
+      "keywords": ["cyberattack", "ransomware", "data breach", "hacked", "cyber intrusion", "zero-day", "nation-state actor", "infrastructure breach"],
+      "weight": 0.75,
+      "impact": {
+        "bullish_sectors": ["cybersecurity"],
+        "bearish_sectors": ["the_targeted_company"],
+        "example_tickers": {
+          "bullish": ["PANW", "CRWD", "ZS", "FTNT", "S"],
+          "bearish": []
+        }
+      }
+    },
+    "election_outcome": {
+      "label": "Election / Political Transition",
+      "keywords": ["election results", "elected president", "ousted", "coup", "regime change", "snap election", "won the election", "concedes"],
+      "weight": 0.75,
+      "impact": {
+        "bullish_sectors": ["depends_on_winner_policy"],
+        "bearish_sectors": ["depends_on_winner_policy"],
+        "example_tickers": {
+          "bullish": [],
+          "bearish": []
+        }
+      }
+    },
+    "earnings_material": {
+      "label": "Material Corporate Filing (8-K)",
+      "keywords": ["material agreement", "departure of officer", "bankruptcy", "delisting", "material impairment", "auditor resignation", "going concern"],
+      "weight": 0.7,
+      "impact": {
+        "bullish_sectors": ["depends_on_filing"],
+        "bearish_sectors": ["the_filing_company"],
+        "example_tickers": {
+          "bullish": [],
+          "bearish": []
+        }
+      }
+    },
+    "supply_chain_disruption": {
+      "label": "Supply Chain Disruption",
+      "keywords": ["supply chain", "port closure", "shipping disruption", "container shortage", "chip shortage", "factory shutdown", "logistics crisis"],
+      "weight": 0.75,
+      "impact": {
+        "bullish_sectors": ["domestic_logistics", "inventory_holders"],
+        "bearish_sectors": ["consumer_electronics", "auto_manufacturers"],
+        "example_tickers": {
+          "bullish": ["FDX", "UPS"],
+          "bearish": ["AAPL", "F", "GM"]
+        }
+      }
+    }
+  }
+}
